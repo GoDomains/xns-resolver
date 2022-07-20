@@ -11,6 +11,7 @@ var abi = {
   registrar: require("./contracts/registrar.json"),
   resolver: require("./contracts/resolver.json"),
 };
+const NotFoundError = new Error("ENS name not defined.");
 
 function resolveIpfs(name, network) {
   const rpc = getNetworkRpc(network);
@@ -82,7 +83,7 @@ function resolveEthAddress(name, network) {
       .then((address) => {
         console.log("🚀 ~ file: index.js ~ line 58 ~ .then ~ address", address);
         if (address === "0x0000000000000000000000000000000000000000") {
-          reject(null);
+          throw NotFoundError;
         } else {
           Resolver = new web3.eth.Contract(abi.resolver, address);
           resolve(Resolver.methods.addr(hash).call());
