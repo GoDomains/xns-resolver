@@ -49,9 +49,9 @@ function resolveIpfs(name, network) {
 }
 function getNetworkRpc(network) {
   switch (network) {
-    case 50:
+    case "50":
       return "https://rpc-mainnet.xinfin.yodaplus.net";
-    case 51:
+    case "51":
       return "https://rpc-apothem.xinfin.yodaplus.net";
     default:
       return "https://rpc-mainnet.xinfin.yodaplus.net";
@@ -59,9 +59,9 @@ function getNetworkRpc(network) {
 }
 function getRegistrarAddress(network) {
   switch (network) {
-    case 50:
+    case "50":
       return REGISTRAR_MAIN_NET;
-    case 51:
+    case "51":
       return REGISTRAR_APOTHEM;
     default:
       return REGISTRAR_APOTHEM;
