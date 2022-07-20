@@ -83,7 +83,7 @@ function resolveEthAddress(name, network) {
       .then((address) => {
         console.log("🚀 ~ file: index.js ~ line 58 ~ .then ~ address", address);
         if (address === "0x0000000000000000000000000000000000000000") {
-          throw NotFoundError;
+          resolve("0x0000000000000000000000000000000000000000");
         } else {
           Resolver = new web3.eth.Contract(abi.resolver, address);
           resolve(Resolver.methods.addr(hash).call());
