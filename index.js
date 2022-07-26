@@ -3,8 +3,7 @@ const namehash = require("eth-ens-namehash");
 const multihash = require("multihashes");
 const contentHash = require("@ensdomains/content-hash");
 
-const REGISTRAR_MAIN_NET = "0x314159265dd8dbb310642f98f50c066173c1259b";
-const REGISTRAR_ROPSTEN = "0x112234455c3a32fd11230c42e7bccd4a84e02010";
+const REGISTRAR_MAIN_NET = "0x370b5957d765b4318c0903c15aC60f0A7898c3bF";
 const REGISTRAR_APOTHEM = "0x596F02DF7513aaEb8B707971FbA8c35A2F6381E8";
 
 var abi = {
@@ -51,11 +50,11 @@ function resolveIpfs(name, network) {
 function getNetworkRpc(network) {
   switch (network) {
     case "50":
-      return "https://rpc-mainnet.xinfin.yodaplus.net";
+      return "https://rpc.xinfin.yodaplus.net";
     case "51":
       return "https://rpc-apothem.xinfin.yodaplus.net";
     default:
-      return "https://rpc-mainnet.xinfin.yodaplus.net";
+      return "https://rpc.xinfin.yodaplus.net";
   }
 }
 function getRegistrarAddress(network) {
@@ -65,7 +64,7 @@ function getRegistrarAddress(network) {
     case "51":
       return REGISTRAR_APOTHEM;
     default:
-      return REGISTRAR_APOTHEM;
+      return REGISTRAR_MAIN_NET;
   }
 }
 function resolveEthAddress(name, network) {
