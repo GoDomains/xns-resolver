@@ -3,8 +3,8 @@ const namehash = require("eth-ens-namehash");
 const multihash = require("multihashes");
 const contentHash = require("@ensdomains/content-hash");
 
-const REGISTRAR_MAIN_NET = "0x370b5957d765b4318c0903c15aC60f0A7898c3bF";
-const REGISTRAR_APOTHEM = "0x596F02DF7513aaEb8B707971FbA8c35A2F6381E8";
+const REGISTRAR_MAIN_NET = "0x3C69E80658eeDd01B0c023f5e65dDf8516B02BeF";
+const REGISTRAR_APOTHEM = "0xc5e1cBf8c3900F283a04E640cDA100aAa59666Ac";
 
 var abi = {
   registrar: require("./contracts/registrar.json"),
